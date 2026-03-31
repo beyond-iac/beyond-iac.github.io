@@ -24,12 +24,15 @@ concurrency:
 jobs:
   # Build job
   build:
+  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Force Node 24 for Javascript Actions
+        run: echo "FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true" >> $GITHUB_ENV
       - name: Setup Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v6 # (31/03/2026 - awaiting on NodeJS 24) https://github.com/actions/configure-pages/issues/191
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -48,4 +51,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v6
+        uses: actions/deploy-pages@v5
