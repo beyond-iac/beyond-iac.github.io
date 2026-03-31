@@ -39,7 +39,7 @@ jobs:
           source: ./
           destination: ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4.6.2 (31/03/2026 - awaiting on NodeJS 24) https://github.com/actions/upload-pages-artifact/issues/138
+        uses: actions/upload-pages-artifact@v4.6.2 # (31/03/2026 - awaiting on NodeJS 24) https://github.com/actions/upload-pages-artifact/issues/138
 
   # Deployment job
   deploy:
